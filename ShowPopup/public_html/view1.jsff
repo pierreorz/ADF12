@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout id="pgl1">
+    <af:button id="cb1" text="goView2" action="goView2"/>
+     <f:event listener="#{backingBeanScope.view1Bean.invokePopup}" type="preRenderComponent"/>
+    <af:popup childCreation="immediate" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
+      <af:dialog id="d1" resize="on"  stretchChildren="first"  type="ok" title="Information">
+      
+        <af:outputText value="this is a text." id="ot1"/>
+       
+      </af:dialog>
+    </af:popup>
+  </af:panelGroupLayout>
+</ui:composition>

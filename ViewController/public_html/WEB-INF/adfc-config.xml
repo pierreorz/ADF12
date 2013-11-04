@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__1">
+    <managed-bean-name>backing_changeButton</managed-bean-name>
+    <managed-bean-class>cn.dengdezhao.backing.ChangeButton</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1changeButton.jsf-->
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>backing_pivot</managed-bean-name>
+    <managed-bean-class>cn.dengdezhao.backing.Pivot</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1pivot.jsf-->
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>backing_testParameter</managed-bean-name>
+    <managed-bean-class>cn.dengdezhao.backing.TestParameter</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1testParameter.jsf-->
+  </managed-bean>
+</adfc-config>

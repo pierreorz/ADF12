@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="testParameter.jsf" id="d1" binding="#{backingBeanScope.backing_testParameter.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_testParameter.f1}">
+            <af:outputFormatted value="#{initParam['javax.faces.FACELETS_VIEW_MAPPINGS']}" id="of1"
+                                />
+            <af:button text="button 1" id="b1" binding="#{backingBeanScope.backing_testParameter.b1}"
+                       action="#{backingBeanScope.backing_testParameter.action}"/>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_testParameter-->
+</f:view>

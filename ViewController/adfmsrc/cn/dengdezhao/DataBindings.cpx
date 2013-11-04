@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="cn.dengdezhao" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/changeButton.jsf" usageId="cn_dengdezhao_changeButtonPageDef"/>
+    <page path="/pivot.jsf" usageId="cn_dengdezhao_pivotPageDef"/>
+    <page path="/iteratorInput.jsff" usageId="cn_dengdezhao_iteratorInputPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="cn_dengdezhao_changeButtonPageDef" path="cn.dengdezhao.pageDefs.changeButtonPageDef"/>
+    <page id="cn_dengdezhao_pivotPageDef" path="cn.dengdezhao.pageDefs.pivotPageDef"/>
+    <page id="cn_dengdezhao_iteratorInputPageDef" path="cn.dengdezhao.pageDefs.iteratorInputPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="testAMDataControl" Package="cn.dengdezhao.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="testAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

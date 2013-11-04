@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="changeButton.jsf" id="d1" binding="#{backingBeanScope.backing_changeButton.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_changeButton.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_changeButton.f1}">
+            <af:panelBox text="ShowButton" id="pb1" binding="#{backingBeanScope.backing_changeButton.pb1}">
+                <f:facet name="toolbar"/>
+                <af:button text="button 1" id="b1" binding="#{backingBeanScope.backing_changeButton.b1}"/>
+            </af:panelBox>
+            <af:panelBox text="Table" id="pb2" binding="#{backingBeanScope.backing_changeButton.pb2}">
+                <f:facet name="toolbar"/>
+                <af:table value="#{bindings.EmployeesVO1.collectionModel}" var="row"
+                          rows="#{bindings.EmployeesVO1.rangeSize}"
+                          emptyText="#{bindings.EmployeesVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.EmployeesVO1.collectionModel.selectedRow}"
+                          selectionListener="#{backingBeanScope.backing_changeButton.rowSelection}" rowSelection="single"
+                          fetchSize="#{bindings.EmployeesVO1.rangeSize}" id="t1"
+                          binding="#{backingBeanScope.backing_changeButton.t1}">
+                    <af:column headerText="#{bindings.EmployeesVO1.hints.EmployeeId.label}" id="c1">
+                        <af:outputText value="#{row.EmployeeId}"
+                                       shortDesc="#{bindings.EmployeesVO1.hints.EmployeeId.tooltip}" id="ot1">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.EmployeesVO1.hints.EmployeeId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.EmployeesVO1.hints.FirstName.label}" id="c2">
+                        <af:outputText value="#{row.FirstName}"
+                                       shortDesc="#{bindings.EmployeesVO1.hints.FirstName.tooltip}" id="ot2"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.EmployeesVO1.hints.LastName.label}" id="c3">
+                        <af:outputText value="#{row.LastName}"
+                                       shortDesc="#{bindings.EmployeesVO1.hints.LastName.tooltip}" id="ot3"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.EmployeesVO1.hints.Email.label}" id="c4">
+                        <af:outputText value="#{row.Email}" shortDesc="#{bindings.EmployeesVO1.hints.Email.tooltip}"
+                                       id="ot4"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.EmployeesVO1.hints.PhoneNumber.label}" id="c5">
+                        <af:outputText value="#{row.PhoneNumber}"
+                                       shortDesc="#{bindings.EmployeesVO1.hints.PhoneNumber.tooltip}" id="ot5"/>
+                    </af:column>
+                </af:table>
+            </af:panelBox>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_changeButton-->
+</f:view>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="task-flow-definition">
+    <default-activity>view1</default-activity>
+    <managed-bean id="__5">
+      <managed-bean-name>view1Bean</managed-bean-name>
+      <managed-bean-class>cn.dengdezhao.View1Bean</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="view1">
+      <page>/view1.jsff</page>
+    </view>
+    <view id="view2">
+      <page>/view2.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>view1</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goView2</from-outcome>
+        <to-activity-id>view2</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>view2</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>goView1</from-outcome>
+        <to-activity-id>view1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

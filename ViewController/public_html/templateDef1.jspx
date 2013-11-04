@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs" definition="private">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <description/>
+        <display-name>templateDef1</display-name>
+        <facet>
+          <facet-name>header</facet-name>
+        </facet>
+        <facet>
+          <facet-name>footer</facet-name>
+        </facet>
+        <facet>
+          <facet-name>menu</facet-name>
+        </facet>
+        <facet>
+          <facet-name>center</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>toolbarCommand</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <required>true</required>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <af:panelSplitter splitterPosition="102" id="pt_ps2">
+      <f:facet name="first">
+        <!-- Left -->
+        <af:facetRef facetName="menu"/>
+      </f:facet>
+      <f:facet name="second">
+        <af:panelSplitter splitterPosition="50" orientation="vertical" id="pt_ps1">
+          <f:facet name="first">
+            <!-- Partial Header -->
+          </f:facet>
+          <f:facet name="second">
+            <af:panelGridLayout id="pt_pgl1">
+              <af:gridRow height="100%" id="pt_gr1">
+                <af:gridCell width="100%" halign="stretch" valign="stretch" id="pt_gc1">
+                  <!-- Content -->
+                  <af:facetRef facetName="center"/>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow height="50px" id="pt_gr2">
+                <af:gridCell width="100%" halign="stretch" valign="stretch" id="pt_gc2">
+                  <!-- Partial Footer -->
+                  <af:facetRef facetName="footer"/>
+                </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
+          </f:facet>
+        </af:panelSplitter>
+      </f:facet>
+    </af:panelSplitter>
+  </af:pageTemplateDef>
+</jsp:root>

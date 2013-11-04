@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="pivot.jsf" id="d1" binding="#{backingBeanScope.backing_pivot.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_pivot.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_pivot.f1}">
+            <dvt:pivotTable id="pt1" value="#{bindings.EmployeesVO1.pivotTableModel}" var="cellData"
+                            varStatus="cellStatus" splitMode="enabled" binding="#{backingBeanScope.backing_pivot.pt1}">
+                <dvt:headerCell binding="#{backingBeanScope.backing_pivot.hc1}" id="hc1">
+                    <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s1"
+                                 binding="#{backingBeanScope.backing_pivot.s1}">
+                        <f:facet name="DataLayer">
+                            <af:outputText value="#{cellData.label}" id="ot1"
+                                           binding="#{backingBeanScope.backing_pivot.ot1}"/>
+                        </f:facet>
+                        <f:facet name="FirstName">
+                            <af:outputText value="#{cellData.dataValue}" id="ot2"
+                                           binding="#{backingBeanScope.backing_pivot.ot2}"/>
+                        </f:facet>
+                        <f:facet name="DepartmentId">
+                            <af:outputText value="#{cellData.dataValue}" id="ot3"
+                                           binding="#{backingBeanScope.backing_pivot.ot3}">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.EmployeesVO1.hints.DepartmentId.format}"/>
+                            </af:outputText>
+                        </f:facet>
+                        <f:facet name="Default">
+                            <af:outputText value="#{cellData.dataValue}" id="ot4"
+                                           binding="#{backingBeanScope.backing_pivot.ot4}"/>
+                        </f:facet>
+                    </af:switcher>
+                </dvt:headerCell>
+                <dvt:dataCell binding="#{backingBeanScope.backing_pivot.dc1}" id="dc1">
+                    <af:switcher facetName="#{cellStatus.members.DataLayer.value}" defaultFacet="Default" id="s2"
+                                 binding="#{backingBeanScope.backing_pivot.s2}">
+                        <f:facet name="Salary">
+                            <af:outputText value="#{cellData.dataValue}" id="ot5"
+                                           binding="#{backingBeanScope.backing_pivot.ot5}">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.EmployeesVO1.hints.Salary.format}"/>
+                            </af:outputText>
+                        </f:facet>
+                        <f:facet name="Default">
+                            <af:outputText value="#{cellData.dataValue}" id="ot6"
+                                           binding="#{backingBeanScope.backing_pivot.ot6}"/>
+                        </f:facet>
+                    </af:switcher>
+                </dvt:dataCell>
+            </dvt:pivotTable>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_pivot-->
+</f:view>

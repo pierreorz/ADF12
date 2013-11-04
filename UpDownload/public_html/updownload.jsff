@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Header -->
+                <af:panelBox text="Upload" id="pb1" >
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout id="pg1" layout="horizontal">                    
+                    <af:inputFile label="Label 1" id="if1"   
+                                  valueChangeListener="#{viewScope.uploadBean.valueChange}"/>
+                        <af:button text="upload" id="b1" action="#{viewScope.uploadBean.uploadAction}"/>
+                    </af:panelGroupLayout>
+                </af:panelBox>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="100%" id="gr2">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                <!-- Content -->
+                <af:panelBox text="Download" id="pb2">
+                    <f:facet name="toolbar"/>
+                </af:panelBox>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:uploadBean-->
+</ui:composition>

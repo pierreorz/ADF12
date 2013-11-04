@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="50px" id="gr2">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                <!-- Header -->
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:button text="button 1" id="b1" action="#{iterBean.action}"/>
+                <af:iterator id="i1" var="each" value="#{iterBean.list}" varStatus="row">
+                    <af:panelBox text="#{each}" id="pb1">
+                        <f:facet name="toolbar"/>
+                        <af:inputText label="Values" id="it1" value="#{iterBean.values[row.index]}"/>
+                    </af:panelBox>
+                </af:iterator>
+                <af:forEach items="#{iterBean.testList}"  var="each" varStatus="row">
+                  <af:panelBox text="#{each.title}" id="pb2">
+                    <af:outputText value="#{row.index} #{each.title}" id="ot1"/>
+                    </af:panelBox>
+                </af:forEach>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>
